@@ -16,6 +16,7 @@
     "ws": "^8.18.0"
   },
   "devDependencies": {
+    "@microsoft/eslint-formatter-sarif": "^3.1.0",
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.2",
     "@types/ws": "^8.5.13",
