@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Login page</title>
+   <link rel="stylesheet" href="../styles/login.css">
+</head>
+
+<body>
+   <div class="login-page container" id="loginPage">
+      <h1 class="heading">Enter your name to login</h1>
+      <input type="text" class="login-input" id="loginInput" placeholder="Enter your name">
+      <button class="login-btn" id="loginBtn">Login</button>
+   </div>
+   <div id="callPage" class="call-page">
+      <div class="video-stream">
+         <video id="localVideo" autoplay></video>
+         <video id="remoteVideo" autoplay></video>
+      </div>
+      <div class="options">
+         <div class="call-input-container">
+            <input id="callToUsernameInput" class="call-input" type="text" placeholder="username to call" />
+         </div>
+         <div class="video-options">
+            <button id="startVideoBtn" class="call-btn btn">Call</button>
+            <button id="stopVideoBtn" class="hang-btn btn">Hang Up</button>
+         </div>
+      </div>
+   </div>
+
+</body>
+<script src="../../dist/apis/connection.js"></script>
+
+</html>
