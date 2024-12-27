@@ -1,4 +1,6 @@
-const connection = new WebSocket("ws://localhost:3000");
+import { createWebSocketConnection } from "../client/services/webSocketService";
+
+const connection = createWebSocketConnection();
 
 const loginInput = document.querySelector("#loginInput") as HTMLInputElement;
 const loginBtn = document.querySelector("#loginBtn") as HTMLButtonElement;
@@ -10,18 +12,6 @@ if (!loginInput || !loginBtn) {
 }
 
 var connectedUser: any;
-
-connection.onopen = () => {
-  console.log("Connection was created!");
-};
-
-connection.onerror = (err) => {
-  console.log("An error occured", err);
-};
-
-connection.onclose = () => {
-  console.log("connection was closed!");
-};
 
 const handleLogin = () => {
   const name = loginInput?.value;
@@ -45,15 +35,6 @@ connection.onmessage = (message) => {
     case "login":
       onLogin(data.success);
       break;
-    // case "offer":
-    //     onOffer();
-    //     break;
-    // case "answer":
-    //     onAnswer();
-    //     break;
-    // case "candidate":
-    //     onCandidate();
-    //     break;
     default:
       break;
   }
