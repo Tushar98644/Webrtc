@@ -2,6 +2,7 @@ import { iceServers } from "../config/iceServers";
 
 export const createPeerConnection = (localStream: MediaStream): RTCPeerConnection => {
   const myConnection = new RTCPeerConnection({ iceServers });
+    console.log("RTCPeerConnection object created:", myConnection);
 
   localStream.getTracks().forEach((track) => {
     myConnection.addTrack(track, localStream);
